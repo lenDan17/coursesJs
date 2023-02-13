@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>5</title>
+</head>
+<body>
+   <script>
+    //Дано кількість секунд, що пройшла від початку доби. Визначити скільки це годин і хвилин.
+    let howMuchSecond = parseInt(prompt(`Вкажіть кількість секунд` , `0`))
+
+    let howMuchHour = howMuchSecond /3600
+    let howMuchMinutes = howMuchSecond /60
+    document.write(`<div>Кількість годин  =${howMuchHour.toFixed(3)} </div>
+        <div>Кількість хвилин =${howMuchMinutes.toFixed(3)}</div>`)
+   </script> 
+</body>
+</html>

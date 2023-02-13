@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>7</title>
+</head>
+<body>
+  <script>
+    //Знайти суму випадкового номера місяця (від 1 до 12) та випадкового номера дня (від 0 до 6).
+let minMonth = 1
+let maxMonth = 12
+
+let minDay = 0
+let maxDay = 6
+let randomMonth = minMonth + Math.floor(Math.random() * (maxMonth - minMonth +1))
+let randomDay = minDay + Math.floor(Math.random() * (maxDay - minDay +1))
+document.write(`<div style = 
+   ' max-width: 800px;
+    margin: 0 auto;
+    font-size: 25px;
+    color: rgba(0, 0, 0, 0.826);
+  padding: 20px 30px;
+  background-color: rgba(0, 0, 0, 0.089);
+  text-align: center;
+  margin-bottom: 18px;'
+    >
+<div>Випадковий номер місяця ${randomMonth} </div>
+<div>Випадковий номер дня ${randomDay} </div></div>`
+)
+  </script>  
+</body>
+</html>
