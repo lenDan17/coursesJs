@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>6</title>
+</head>
+<body>
+   <script>
+    //З клавіатури вводиться номер дня тижня. Вивести на екран назву дня.
+    let numberWeek = parseInt(prompt(` ввeдiть номер дня тижня`))
+    let resultDay 
+
+    if(numberWeek == 1 )
+    resultDay = 'monday'
+    else if (numberWeek == 2 )
+    resultDay = 'tuesday'
+    else if (numberWeek == 3 )
+    resultDay = 'wednesday'
+    else if (numberWeek == 4 )
+    resultDay = 'thursday'
+    else if (numberWeek ==5 )
+    resultDay = 'friday'
+    else if (numberWeek == 6 )
+    resultDay = 'saturday'
+    else if (numberWeek ==7 )
+    resultDay = 'sunday'
+    else
+    resultDay = "error"
+    document.write(` <div>${resultDay}</div>`)
+   </script> 
+</body>
+</html>

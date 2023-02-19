@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>3</title>
+</head>
+<body>
+   <script>
+    //Випадковим чином генерується число від 1 до 5. Спробуйте вгадати число за 2 спроби.
+const numberMin = 1
+const numberMax = 5
+
+let randomNumber = numberMin + Math.floor(Math.random () * (numberMax - numberMin + 1))
+let number = parseFloat(prompt(` Спробуйте вгадати число за 2 спроби ,введіть число від 1 до 5 , перша спроба `, `1`))
+let result 
+if(randomNumber === number)
+result = 'Congratulations'
+
+else {
+    number = parseFloat(prompt(` Спробуйте вгадати число за 2 спроби ,введіть число від 1 до 5 , друга спроба `, `1`))
+    if(randomNumber === number)
+    result = 'Congratulations' 
+    else
+result = 'good luck next time' 
+}
+document.write(` <div>${result}</div>`)
+
+   </script> 
+</body>
+</html>

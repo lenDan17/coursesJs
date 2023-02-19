@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>5</title>
+</head>
+<body>
+   <script>
+    //З клавіатури вводиться назва категорії водія (А-мотоцикл, В-легковий автомобіль,
+    // С-вантажний автомобіль). Вивести на екран назву транспортного засобу, яким він може керувати.
+let driverCategory = prompt(`Вивести на екран назву категорії водія (А-мотоцикл, В- автомобіль,
+     С-вантажний автомобіль)`)
+     let resultCategory 
+     if(driverCategory ==='c' || driverCategory ==='C')
+     resultCategory = 'вантажний автомобіль'
+     else if(driverCategory ==='b' || driverCategory ==='B' )
+     resultCategory = 'легковий автомобіль'
+     else if(driverCategory ==='a' || driverCategory ==='A' )
+     resultCategory = 'мотоцикл'
+     else
+     resultCategory = 'error'
+     document.write(` <div>${resultCategory}</div>`)
+   </script> 
+</body>
+</html>
