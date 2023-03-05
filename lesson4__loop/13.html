@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>13</title>
+</head>
+<body>
+    <h1>
+        13. Морський бій. Комп’ютер випадково розташовує одиночний корабель 
+        на полі розміром N*M. Маючи К снарядів користувач намагається потопити корабель.
+    </h1>
+    <script>
+        //13. Морський бій. Комп’ютер випадково розташовує одиночний 
+        //корабель на полі розміром N*M. Маючи К снарядів користувач намагається потопити корабель.
+        const coordinatesX = parseInt(prompt(`введіть кількість клітинок для гри по осі х`))
+        const coordinatesY = parseInt(prompt(`введіть кількість клітинок для гри по осі y`))
+        let numberShots = parseInt(prompt(`введіть кількість снарядів`))
+
+        let result
+
+        let shipX = 1+ Math.floor(Math.random()* (coordinatesX-1 +1))
+        let shipY = 1+ Math.floor(Math.random()* (coordinatesX-1 +1))
+        for (let i = 0; i < numberShots ; i++) {
+          let choiceX = parseInt(prompt(`введіть номер клітинки  по осі х від 1 до ${coordinatesX}`))
+          let choiceY = parseInt(prompt(`введіть номер клітинки  по осі Y від 1 до ${coordinatesY}`)) 
+          if (coordinatesX === shipX || coordinatesY === shipY ) {
+            confirm(`ви затопили корабль`) }
+        else if(coordinatesX !== shipX || coordinatesY !== shipY)
+        confirm(`ви не попали`)
+        else
+        confirm(`ви програли`)
+        }
+          
+    </script>
+</body>
+</html>

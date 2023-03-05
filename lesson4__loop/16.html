@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>16</title>
+</head>
+<body>
+  <h1>Користувач поступово вводить прибуток магазину за кожен день протягом N тижнів. Знайти загальну величину прибутку та вивести величину прибутку протягом кожного окремого тижня.
+</h1>  
+<script>
+    //Користувач поступово вводить прибуток магазину за кожен день протягом N тижнів. 
+    //Знайти загальну величину прибутку та вивести величину прибутку протягом кожного окремого тижня.
+    const numberWeek = parseInt(prompt(`ввудіть кількість тижнів`))
+let weekSum 
+let generalSum = 0
+
+for (let i = 1; i <= numberWeek; i++) {
+    weekSum = 0
+   for (let j = 1; j <= 7; j++) {
+let earningsShop = parseFloat(prompt(`Ведіть прибуток магазину за ${j}  день`))
+    weekSum+= earningsShop
+    
+   } 
+   generalSum+= weekSum 
+   alert(`прибуток за ${i}тиждень${ weekSum}грн`)
+  
+}
+ 
+alert(`прибуток за ${numberWeek}тижнів =${generalSum} `)
+
+</script>
+</body>
+</html>

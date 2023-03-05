@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>1</title>
+</head>
+<body>
+    <script>
+        // Вивести з використанням циклів маркований список 
+        //з випадковими числами (1-100).
+        // Кількість випадкових чисел вводиться користувачем.
+        const minNumber = 1
+        const maxNumber = 100
+        let quantityNumber = parseInt(prompt(`Вивести Кількість випадкових чисел` , `1`))
+        let resultQuantity 
+        for (let i = 0; i < quantityNumber ; i++) {
+           let randomNumber = minNumber + Math.floor( Math.random() * (maxNumber - minNumber+ 1) )
+            resultQuantity = randomNumber
+          document.write(`<ul>
+        <li>${resultQuantity}</li>
+    </ul>`)  
+        }
+    </script>
+</body>
+</html>

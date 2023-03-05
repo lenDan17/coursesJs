@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>12</title>
+</head>
+<body>
+    <h1 style = 'margin: 0 auto;'>Задача 12. Ігровий автомат. Випадково вибираємо зображення у 3 позиціях.
+         Вибір у кожній позиції вибирається як одне з чотирьох зображень. 
+        Вивести ці зображення і повідомити виграш користувача 
+        (три перших зображення 100 грн, три других – 200, три третіх – 500, три четвертих зображення – 1000грн).
+         Використати цикли і switch (для вибору зображення за номером).</h1>
+    <script>
+        //Задача 12. Ігровий автомат. Випадково вибираємо зображення у 3 позиціях.
+        // Вибір у кожній позиції вибирається як одне з чотирьох зображень. 
+        //Вивести ці зображення і повідомити виграш користувача 
+        //(три перших зображення 100 грн, три других – 200, три третіх – 500, три четвертих зображення – 1000грн).
+        // Використати цикли і switch (для вибору зображення за номером).
+
+     let imageNumberOne = 0
+     let imageNumberTwo = 0
+      let imageNumberThree = 0
+      let imageNumberfor = 0
+      let result
+
+      for (let i = 0; i < 3; i++) {
+  let randomNumber =1 + Math.floor(Math.random() * 4)
+    switch (randomNumber) {
+       case 1: imageNumberOne ++
+   break;
+            case 2:  imageNumberTwo ++
+           break;
+           case 3 :  imageNumberThree ++
+            break;
+            case 4: imageNumberfor ++
+            break;   
+    } 
+    document.write(`<img style = 'width: 150px;' src="./img/${randomNumber}.jpg" alt="" >`)
+}
+if (imageNumberOne === 3) 
+result = 100
+else if(imageNumberTwo ===3)
+result= 200
+else if(imageNumberThree ===3)
+result= 500
+else if(imageNumberfor ===3)
+result= 1000
+else
+result = 0
+document.write(` <div> Ваш виграш ${result}грн </div>`)
+
+    </script>
+</body>
+</html>
