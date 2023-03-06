@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>2</title>
+</head>
+<body>
+    <h1>Створити функцію, яка за номером дня дозволяє з’ясувати чи є цей день робочим.</h1>
+    <script>
+        //Створити функцію, яка за номером дня дозволяє з’ясувати чи є цей день робочим.
+        function getWorkDay(day) {
+          let result
+          switch (day) {
+            case 1:
+            case 2:
+            case 3:
+            case 4:
+            case 5: result = 'Робочий день'
+            break;
+            case 6:
+            case 7:result ='Ура вихідний'
+                break;
+          }  
+          return result
+        }
+        const dayWeek = parseInt(prompt(`введіть день тижня`))
+        const resultDayWeek= getWorkDay(dayWeek)
+        document.write(`  <div style = 'max-width: 800px;  font-size: 40px; margin: 0 auto;  font-size: 40px;color: red; '>${resultDayWeek}</div>`)
+    </script>
+</body>
+</html>

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>8</title>
+</head>
+<body>
+  <h1>Задача 8. Створити функцію, яка виводить банер (у функцію передаються: зображення, 
+    заголовок та посилання, куди переходимо при кліку на зображення (тег img повине знаходитись у середині тега a: <a> <img src=”шлях”> </a>
+  </h1> 
+  <script>
+    //Задача 8. Створити функцію, яка виводить банер (у функцію передаються: 
+    //зображення, заголовок та посилання, куди переходимо при кліку на зображення 
+    //(тег img повине знаходитись у середині тега a: <a> <img src=”шлях”> </a>
+function getBanner(title, image, link) {
+let resultBanner = document.write   (` <div style = ' max-width: 800px;margin: 0 auto;display: flex;flex-direction: column;gap: 20px;'>
+    <h2>${title}</h2> 
+    <a href="${link}"> <img src="./img/task8/${image}.jpg" alt=""></a>
+    </div> ` )
+    return resultBanner
+}
+let WriteTitle = (prompt(`напишіть заголовок до вашого банера `))
+let WriteImage = (prompt(`вкажіть зображеня до вашого банера `,`1 або2` ))
+let WriteLink = (prompt(`напишіть посилання `))
+
+let result = getBanner(WriteTitle, WriteImage, WriteLink)
+document.write(`<div${result}</div>`)
+  </script> 
+</body>
+</html>

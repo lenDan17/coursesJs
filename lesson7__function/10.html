@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>10</title>
+</head>
+<body>
+   <h1> Дано покази температур (довільна кількість). Розробити функцію, яка дозволить знайти середнє значення для додатних показів температури.
+</h1> 
+<script>
+    // Дано покази температур (довільна кількість). Розробити функцію,
+    // яка дозволить знайти середнє значення для додатних показів температури.
+function getTemp() {
+    let count = 0
+    let positiveTemp = 0
+    let resultTemperatur
+    let quantityTemperatur =parseInt(prompt(`введіть кількість показників`))
+    for (let i = 0; i < quantityTemperatur; i++) {
+       resultTemperatur = parseInt(prompt(`введіть  показникu`))
+       if (resultTemperatur > 0) {
+       positiveTemp += resultTemperatur
+       count ++}
+    }
+    let resultPositiveTemp = positiveTemp / count
+    return document.write(`<div>середнє значення = ${resultPositiveTemp}</div>`) 
+  }
+getTemp()
+</script>
+</body>
+</html>

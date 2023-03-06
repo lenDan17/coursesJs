@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>5</title>
+</head>
+<body>
+   <h1>Задача 5. Створити окремі функції, які переводять:
+    Сантиметри у дюйми;
+    Кілограми у фунти;
+    Кілометри у милі.
+    </h1> 
+    <script>
+        //Задача 5. Створити окремі функції, які переводять:
+//Сантиметри у дюйми;
+//Кілограми у фунти;
+//Кілометри у милі.
+function getinch(cm) {
+  let resultCm = cm * 0.39  
+  return resultCm
+}
+const quantityCm = parseFloat(prompt(`ввести кшлькість см які потрібно перевести в дюйми`))
+const resultInch =getinch(quantityCm)
+document.write(`  <div style = 'max-width: 800px;  font-size: 40px; margin: 0 auto;  font-size: 40px;color: red; '> кількість дюймів${resultInch.toFixed(3)}</div>`)
+ 
+//Кілограми у фунти;
+function getPounds(kg) {
+  let resultKg = (0.45 * kg) * kg 
+  return resultKg
+}
+const quantityKg = parseFloat(prompt(`ввести клькість кг які потрібно перевести в фунти`))
+const resultPounds =getPounds(quantityKg)
+document.write(`  <div style = 'max-width: 800px;  font-size: 40px; margin: 0 auto;  font-size: 40px;color: red; '>кількість фунтів${resultPounds.toFixed(3)}</div>`) 
+ //Кілометри у милі.
+function getmile(km) {
+  let resultKm = km /1.61  
+  return resultKm
+}
+const quantityKm = parseFloat(prompt(`ввести клькість км які потрібно перевести в милі`))
+const resultMile = getmile(quantityKm)
+document.write(`  <div style = 'max-width: 800px;  font-size: 40px; margin: 0 auto;  font-size: 40px;color: red; '>кількість миль${resultMile.toFixed(3)}</div>`) 
+ </script>
+</body>
+</html>

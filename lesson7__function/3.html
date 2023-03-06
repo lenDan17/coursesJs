@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>3</title>
+</head>
+<body>
+    <h1>Задача 3. Створити окремі функції, які для 4 чисел знаходять:
+        1)суму;
+        2)добуток;
+        3)середнє арифметичне;
+        4)мінімальне значення. 
+        </h1>
+        <script>
+            //Задача 3. Створити окремі функції, які для 4 чисел знаходять:
+//1)суму;
+//2)добуток;
+//3)середнє арифметичне;
+//4)мінімальне значення. 
+function getSumNumber(num1 , num2, num3, num4) {
+    return (num1 + num2 + num3 + num4)
+}
+function getMultiplication(num1 , num2, num3, num4) {
+   return (num1 * num2* num3* num4) 
+}
+
+function getaverage(num1 , num2, num3, num4) {
+ return (num1 + num2+ num3+ num4) /4  
+}
+
+function getMinNum(num1 , num2, num3, num4) {
+  let min = num1
+  if (num2 < num1) 
+    min = num2
+  
+  else if (num3 < num2)
+  min = num3
+  else if(num4 < num3)
+  min = num4
+  return min
+}
+let findNumberOne = parseFloat(prompt(`введіть 1 число`))
+let findNumberTwo = parseFloat(prompt(`введіть 2 число`))
+let findNumberThree = parseFloat(prompt(`введіть 3 число`))
+let findNumberFor = parseFloat(prompt(`введіть 4 число`))
+//1)суму;
+const sumResult = getSumNumber(findNumberOne, findNumberTwo, findNumberThree, findNumberFor)
+document.write(`  <div style = 'max-width: 800px;  font-size: 40px; margin: 0 auto;  font-size: 40px;color: red; '>${sumResult}</div>`)
+//2)добуток;
+const resultMultiplication   = getMultiplication  (findNumberOne, findNumberTwo, findNumberThree, findNumberFor)  
+document.write(`  <div style = 'max-width: 800px;  font-size: 40px; margin: 0 auto;  font-size: 40px;color: red; '>${resultMultiplication}</div>`)   
+      
+ //3)середнє арифметичне;     
+ const resultEverage = getaverage(findNumberOne, findNumberTwo, findNumberThree, findNumberFor)
+ document.write(`  <div style = 'max-width: 800px;  font-size: 40px; margin: 0 auto;  font-size: 40px;color: red; '>${resultEverage}</div>`)       
+    //4)мінімальне значення. 
+    const resultMinNumber = getMinNum(findNumberOne, findNumberTwo, findNumberThree, findNumberFor) 
+    document.write(`  <div style = 'max-width: 800px;  font-size: 40px; margin: 0 auto;  font-size: 40px;color: red; '>${resultMinNumber}</div>`)       
+     </script>
+</body>
+</html>
