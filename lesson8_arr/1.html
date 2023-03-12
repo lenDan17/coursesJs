@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>1</title>
+</head>
+<body>
+    <h1>Дано масив, який містить оцінки з К предметів. Знайти середній бал і з’ясувати до 
+        якої категорії він відноситься (відмінник, двійочник (має хоча би одну двійку), хорошист (оцінки добре і відмінно), трійочник(є хоча би одна трійка)).
+    </h1>
+    <script>
+        //Дано масив, який містить оцінки з К предметів. 
+        //Знайти середній бал і з’ясувати до якої категорії він відноситься (
+        // відмінник, двійочник (має хоча би одну двійку), хорошист (оцінки добре і відмінно),
+//         // трійочник(є хоча би одна трійка)).
+        let itemsNumber = parseInt(prompt(`ввести кількість предметів`))
+        //шукаемо к-сть предметівюввиводимо оцінки у масив
+function score(itemsNumber) {
+   let arr =[]  
+   for (let i = 0 +1 ; i <= itemsNumber; i++) {
+    let scoreStudent = parseInt(prompt(`введіть оцінку за ${i} предмет`))
+    arr.push(scoreStudent)
+   } 
+   return arr
+}
+//шукаемо суму оцвнок
+ let resultScore = score(itemsNumber)
+ let sum = 0
+ for (const resultSumScore of resultScore) {
+    sum +=resultSumScore
+ }
+ let findNumber = sum / resultScore.length
+console.log(findNumber)
+function findScore(number) {
+     if(number <= 2.5) return 'двійочник'
+  else  if(number == 2.5 && number <= 3.5) return 'трійочник'
+  else  if(number >= 3.5&& number <= 4.5) return 'хорошист'
+  else  if(number > 4.5 && number == 5) return 'відмінник'
+}
+let result = findScore(findNumber)
+document.write(`${result}`)
+  </script>
+</body>
+</html>

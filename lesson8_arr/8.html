@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>8</title>
+</head>
+<body>
+  <h1> Дано одновимірний масив, у якому зберігається певна 
+    виграшна сума (елементи заповнюються випадковим чином значеннями 
+    від -500 до 500). Надаючи користувачу можливість вибирати номери елементів
+      (поки він не відмовиться). Знаходити сумарний виграш.
+</h1>  
+<script>
+    //  Дано одновимірний масив, у якому зберігається певна виграшна сума 
+    //  (елементи заповнюються випадковим чином значеннями від -500 до 500). 
+    //  Надаючи користувачу можливість вибирати номери елементів  
+    //  (поки він не відмовиться). Знаходити сумарний виграш.
+    let fewTimes = 10
+    function winSum(fewTimes,minNum, maxNum ) {
+  let sum =[] 
+  for (let i = 0 ; i < fewTimes; i++) {
+    let randomNum = minNum + Math.floor(Math.random()* (maxNum - minNum + 1))
+    sum.push(randomNum)
+  } 
+  return sum
+}
+let result = winSum(fewTimes,-500,500)
+console.log(result);
+
+function loteri(arr) {
+    let winSum = 0
+    let numElement = 0
+    do {
+        numElement = parseInt(prompt(`введіть номер елемента для для гри вид 1 дщ 10 ,якщо Вам обртдло натісніть cansel`))  
+    if (numElement > 0 && numElement< 10 ) {
+       winSum += arr[numElement - 1] 
+    }
+    } while (isFinite(numElement));
+    return winSum
+}
+let winMoney = loteri(result)
+document.write(`сумарний виграш.${winMoney}`)
+
+
+</script>
+</body>
+</html>
