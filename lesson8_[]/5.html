@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>5</title>
+</head>
+<body>
+    <h1>Задача 5. Дано послідовність оцінок учня. Підрахувати кількість:
+        1)	двійок
+        2)	кількість хороших оцінок (добре, відмінно);
+        3)	кількість оцінок, які нижче середнього.
+        </h1>
+        <script>
+            //Задача 5. Дано послідовність оцінок учня. Підрахувати кількість:
+// 1)	двійок
+// 2)	кількість хороших оцінок (добре, відмінно);
+// 3)	кількість оцінок, які нижче середнього.
+
+let scoreStudent = [2,5,4,3,2,4,5,3,4,1,1]
+function findScore( number, score) {
+   let findNumberScore = 0 
+   for (let i = 0; i < number.length; i++) {
+    if (number[i] === score) {
+        findNumberScore++
+    } 
+   }
+   return findNumberScore
+}
+let resultTwo = findScore(scoreStudent, 2)
+let resultFor = findScore(scoreStudent,4)
+let resultFive = findScore(scoreStudent,5)
+console.log(resultTwo);
+console.log(resultFor);
+console.log(resultFive);
+//==================================================
+
+function lessScore(number,averageScore) {
+   let lessNum = 0 
+
+for (let j = 0; j < number.length; j++) {
+  if (number[j] <= averageScore) {
+    lessNum++
+  }
+  
+} return lessNum }
+let resultLessNum = lessScore(scoreStudent,3)
+console.log(resultLessNum);
+        </script>
+</body>
+</html>

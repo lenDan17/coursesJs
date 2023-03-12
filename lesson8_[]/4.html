@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>4</title>
+</head>
+<body>
+    <h1>Задача 4. Дано послідовність номерів автомобілів. Підрахувати кількість номерів, які :
+        •	починаються на букву «А»;
+        •	перша і остання літери співпадають;
+        •	складаються з більше ніш 5 символів;</h1>
+        <script>
+//             Задача 4. Дано послідовність номерів автомобілів. Підрахувати кількість номерів, які :
+// •	починаються на букву «А»;
+// •	перша і остання літери співпадають;
+// •	складаються з більше ніш 5 символів;
+let quantityNum = ['A888AA',' CB0789c', 'AR456Kk','A888AA' ]
+// •	починаються на букву «А»;
+function letterA(letter= 'A') {
+   let findA = 0 
+   for (let i = 0; i < quantityNum.length; i++) {
+if (quantityNum[i][0] === letter) {
+findA ++   
+} 
+   }
+   return findA
+}
+let resultA = letterA()
+console.log(resultA)
+//==================================================================================
+// •	перша і остання літери співпадають;
+function twoletter(number) {
+    let findTwo = 0 
+    for (let k = 0; k < number.length; k++) {
+       if (quantityNum[k][0] === /* остання літери*/quantityNum[k] [quantityNum[k].length - 1]) {
+        findTwo++
+       }
+        
+    }
+ return findTwo
+}
+let resultTwo = twoletter(quantityNum)
+console.log(resultTwo)
+//==================================================================================
+//	складаються з більше ніш 5 символів;
+function more5(number5= 5) {
+ let result5 = 0   
+ for (let d = 0; d <quantityNum.length; d++) {
+if (quantityNum.length < number5) {
+  result5++
+}  
+ }
+return result5
+}
+let resultNum5 = more5()
+console.log(resultNum5);
+        </script>
+</body>
+</html>
