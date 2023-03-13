@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>9</title>
+</head>
+<body>
+    <h1> Морський бій. Користувач вводить кількість 
+        клітинок одновимірного масиву та кількість одиночних кораблів.
+         Комп’ютер довільно розміщує ці одиночні кораблі у масиві по один у клітинці
+          (якщо у клітинці 0, то клітинка пуста, якщо 1 – то це означає, що там є корабель.
+           Користувач вводить номер клітинки, куди стріляє. Гра продовжується до тих пір, поки не будуть потоплені усі кораблі.
+    </h1>
+    <script>
+        //  Морський бій.
+        //   Користувач вводить кількість клітинок 
+        //   одновимірного масиву та кількість одиночних кораблів. Комп’ютер 
+        //   довільно розміщує ці одиночні кораблі у масиві по один у клітинці 
+        //   (якщо у клітинці 0, то клітинка пуста, якщо 1 – то це означає, що там є корабель.
+        //    Користувач вводить номер клітинки, куди стріляє. Гра продовжується до тих пір,
+        //     поки не будуть потоплені усі кораблі.
+        let cells = parseInt(prompt(`введіть к-сь клітинок`))  
+let ships = parseInt(prompt(`введіть к-сь ships`))
+
+function random(minNum,maxNum) {
+ return minNum + Math.floor(Math.random() * (maxNum - minNum +1)) 
+}
+
+function getShips(cell,ship) {
+ let quantityCell = new Array(cell).fill(0) 
+ for (let i = 0; i < ship; i++) {
+    let shipIndex
+do {
+    shipIndex = random(0 , cell -1 )
+ 
+} while (quantityCell [shipIndex] === 1);
+quantityCell [shipIndex] = 1
+ }
+return quantityCell
+}
+let resultShip = getShips(cells,ships)
+console.log(resultShip)
+
+
+function game(ship) {
+   do {
+    const userGameStrike = parseInt(prompt(`куди Ви будете стріляти `))
+    if(quantityCell[userGameStrike]=== 1){
+    ship--
+     alert('ви попали')
+     quantityCell[userGameStrike] = 0}
+     else
+     alert('ви промазали')
+   } while (ship> 0); 
+}
+const resultGame = game(ships)
+console.log(resultGame)
+
+//     let shipIndex
+//    do {
+//     shipIndex = random (0,cell.length - 1)
+//    } while (quantityCell[shipIndex] === 1); 
+//  } 
+//  return quantityCell
+// }
+// let result = getShips(cells,ships)
+// console.log(result);
+// function game(randomNum,shipsNumber) {
+//     const numberGame = parseInt(prompt(`введіть номер від 1 до ${randomNum}`))
+//     if(quantityCell[numberGame] === 1){
+//         shipsNumber--
+//         alert('ви попали')
+//         quantityCell[numberGame]=0
+//     }
+//     alert ('не попади')
+// }
+
+    </script>
+</body>
+</html>

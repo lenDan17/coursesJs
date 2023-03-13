@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>2</title>
+</head>
+<body>
+   <h1>Задача 2. Дано масив, який зберігає кількість відвідувачів магазину протягом тижня. Вивести на екран:
+    номери днів, протягом яких кількість відвідувачів була меншою за 20;
+    номери днів, коли кількість відвідувачів була мінімальною;
+    номери днів, коли кількість відвідувачів була мінімальною;
+    загальну кількість клієнтів у робочі дні та окремо загальну кількість днів на вихідних.
+    </h1> 
+    <script>
+//         Задача 2. Дано масив, який зберігає кількість відвідувачів магазину протягом тижня. Вивести на екран:
+// номери днів, протягом яких кількість відвідувачів була меншою за 20;
+// номери днів, коли кількість відвідувачів була мінімальною;
+// номери днів, коли кількість відвідувачів була мінімальною;
+// загальну кількість клієнтів у робочі дні та окремо загальну кількість днів на вихідних.
+function numberClients(client) {
+  let arr = []  
+  for (let i = 1; i <= client; i++) {
+ let clients = parseInt(prompt(`вести к-сть клієнтів за ${i} день`))
+    arr.push(clients)
+  }
+  return arr
+}
+let clientsStore = numberClients(7)
+console.log(clientsStore)
+// номери днів, протягом яких кількість відвідувачів була меншою за 20;
+function lessClients(lessNumber) {
+   let lessClientNumber = [] 
+   for (let j = 0; j < clientsStore.length; j++) {
+    if(clientsStore[j] < 20)
+    lessClientNumber.push(j+1)
+   }
+   return lessClientNumber
+}
+let resultLessNumber = lessClients(clientsStore)
+console.log(resultLessNumber)
+//=======================================================================
+// номери днів, коли кількість відвідувачів була мінімальною;
+function minNumber(minNumberDay) {
+   let resultMinNumber = Infinity 
+   for (let k = 0; k < minNumberDay.length; k++) {
+    if (resultMinNumber > minNumberDay[k]) {
+        resultMinNumber = minNumberDay[k] 
+    }
+  
+   }
+   return resultMinNumber
+}
+let minDayClients = minNumber(clientsStore)
+console.log(minDayClients)
+//=======================================================================
+// номери днів, коли кількість відвідувачів була мінімальною;
+function maxNumber(maxNumberDay) {
+    let resultMaxNumber = -Infinity
+    for (let a = 0; a < maxNumberDay.length; a++) {
+      if (resultMaxNumber < maxNumberDay[a]) {
+        resultMaxNumber = maxNumberDay[a]
+      }
+    }
+    return resultMaxNumber
+}
+let maxDayClients = maxNumber(clientsStore)
+console.log(maxDayClients)
+//=========================================================================
+// загальну кількість клієнтів у робочі дні та окремо загальну кількість днів на вихідних.
+function workDay(generalNumberDay ,seperateDay ) {
+   let quantityNum = 0 
+   for (let d = generalNumberDay; d < seperateDay; d++) {
+    quantityNum += clientsStore[d]
+
+   }
+  return quantityNum
+}
+let resultWorkDay = workDay(0 , 5)
+console.log(resultWorkDay)
+let resultWeekendDay = workDay(5 , 7)
+console.log(resultWeekendDay)
+    </script>
+</body>
+</html>
