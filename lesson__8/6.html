@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>6</title>
+</head>
+<body>
+  <h1>Дано послідовність цін товарів та назв (у окремих масивах). Вивести на екран ті, які може собі дозволити користувач (кількість грошей задається).
+    Приклад збереження даних
+    let productsPrices = [1000, 20, 31]
+    let productsTitles = [‘cheese’, ‘juice’, ‘bread’]</h1> 
+    <script>
+        //Дано послідовність цін товарів та назв (у окремих масивах). Вивести на екран ті, які може собі дозволити користувач (кількість грошей задається).
+        // Приклад збереження даних
+        //     let productsPrices = [1000, 20, 31]
+        //     let productsTitles = [‘cheese’, ‘juice’, ‘bread’]
+        let money = parseFloat(prompt(`ввести к-сть грошей`))
+        let productsPrices = [30,50,100,200,50]
+    let productsTitles  = ['cheese','butter', 'bread','tea', 'cofee']
+    function getProdukt(price, produkt,money) {
+      let resultProdurt = []  
+      for (let i = 0; i < price.length; i++) {
+        if (price[i] >=  money) {
+            resultProdurt.push(produkt[i])
+        }
+        
+      }
+   return   resultProdurt
+    }
+    let result = getProdukt(productsPrices,productsTitles,money)
+    console.log(result);
+    </script> 
+</body>
+</html>
