@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>2</title>
+</head>
+<body>
+    <script>
+//         Задача 2. Дано інформацію про прибуток К магазинів протягом тижня. Знайти :
+// 1) загальний прибуток кожного масиву за тиждень;
+function getRandom(minValue,maxValue) {
+ return minValue + Math.floor(Math.random()*(maxValue - minValue + 1))   
+}
+function getRandomArrey(arrlength, minValue,maxValue) {
+   let arr =[] 
+   for (let i = 0; i < arrlength; i++) {
+   const randomNumber = getRandom(minValue,maxValue)
+   arr.push(randomNumber) 
+   }
+   return arr
+}
+function getSumWeek(quantityShop,dayWeek,minValue,maxValue) {
+ let table = []   
+ for (let k = 0; k < quantityShop; k++) {
+    const profit = getRandomArrey(dayWeek,minValue,maxValue)
+    table.push(profit)
+ }
+ return table
+}
+const getQuantityShop = parseInt(prompt(`ввести к-сть магазинів`))
+const day = 7
+// одержаний масив
+let resultArr = getSumWeek(getQuantityShop,day,100,300)
+console.log(resultArr);
+//1) загальний прибуток кожного масиву за тиждень;
+let sumstoreOneWeek = resultArr.map(element=> {
+    let sum = element.reduce((prevEl,el) =>
+    {return prevEl += el}
+    )
+    return sum
+})
+console.log(`загальний прибуток кожного масиву за тиждень = ${sumstoreOneWeek}`);
+//2) загальний прибуток усіх магазинів по дням (загальний прибуток усіх магазинів за понеділок, за вівторок, і т.д.);
+let sumAllStore = []
+for (let i = 0; i < day; i++) {
+   let sum = 0 
+   for (let j = 0; j < resultArr.length; j++) {
+    sum += resultArr[j][i]
+   }
+  sumAllStore.push(sum)  
+}
+console.log(` загальний прибуток усіх магазинів по дням ${sumAllStore}`);
+//3) загальний прибуток за робочі дні
+let sumWorkDay = 0 
+for (let i = 0; i < resultArr.length; i++) {
+   for (let k = 0; k <= 5; k++) {
+   sumWorkDay+= resultArr[i][k]
+   }   
+}
+console.log(`загальний прибуток за робочі дні ${sumWorkDay}`);
+// 4) загальний прибуток за вихідні дні
+let sumWeekenDay = 0
+for (let i = 0; i < resultArr.length; i++) {
+   for (let k = 5; k < day; k++) {
+   sumWeekenDay += resultArr[i][k]
+   }   
+}
+console.log(`загальний прибуток за вихідні дні = ${sumWeekenDay}`);
+//5) максимальний прибуток за середу
+let maxSumWednesday = 0
+for (let i = 0; i < resultArr.length; i++) {
+for (let k = 2; k === 2; k++) {
+    if(resultArr[i][k]> maxSumWednesday)
+    maxSumWednesday = resultArr[i][k]
+}   
+}
+console.log(`максимальний прибуток за середу ${maxSumWednesday}`);
+//6) сформувати загальний список (одновимірний масив) зі значенням, які що більші за 200
+let newList =[]
+for (const row of resultArr) {
+  for (const column of row) {
+   if(column > 200) 
+   newList.push([column])
+  }  
+}
+console.log(`cписок одновимірний масив) зі значенням, які що більші за 200 =${newList}`);
+
+let a =JSON.stringify(resultArr)
+a = JSON.parse(a)
+for (let i = 0; i < a.length; i++) {
+   a[i].sort((a,b)=> a-b )  
+}
+console.log(a);
+
+
+//  //8) відсортувати тижні (рядки) за спаданням максимального елементи у цьому тижні (рядку), 
+//  //тобто при порівнянні рядків потрібно порівнювати максимальні елементи у кожному з цих рядків
+let sortElementDown = JSON.stringify(resultArr)
+sortElementDown= JSON.parse(sortElementDown)
+ for (let i = 0; i < sortElementDown.length; i++) {
+   sortElementDown[i].sort((a,b) => b - a) 
+ }
+ console.log(sortElementDown);
+//  9) упорядкувати тижні (рядки) за спаданням суми елементів у рядку 
+//  (тобто при порівнянні двох рядків треба знайти суму кожного з рядків
+//  і порівнювати ці суми, на основі цих сум буде зрозуміло, який з елементів повинен іти раніше).
+let sortSumDown = JSON.stringify(resultArr)
+sortSumDown = JSON.parse(sortSumDown)
+sortSumDown.sort((a,b)=>  b.reduce((prevB,element)=> prevB+ element) - a.reduce((prevA, element)=> prevA + element))
+   console.log(sortSumDown);
+   </script>
+</body>
+</html>

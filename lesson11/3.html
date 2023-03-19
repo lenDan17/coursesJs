@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>3</title>
+</head>
+<body>
+    <script>
+        //Задача 3. Морський бій.
+        //  Випадковим чином на двовимірному полі розміром 6*6 розташовується 5 кораблів.
+        //   Користувач стріляє вказуючи координати. Г
+        // ра продовжується поки не потоплено усі кораблі або у користувача не закінчаться снаряди.
+       
+       //формуемо массив
+        function getTable(rows,columns) {
+          let table = []  
+          for (let i = 0; i < rows; i++) {
+            let column = []
+            for (let k = 0; k < columns; k++) {
+                column.push(0)   
+            }
+            table.push(column)  
+          }
+        return table}
+        let resultArr = getTable(6,6)
+        console.log(resultArr);
+
+        // розставляемо кораблі
+        function getShips(arr,ships) {
+           for (let i = 0; i < ships; i++) {
+          let shipX
+          let shipY
+          do {
+           shipX = Math.floor(Math.random()* arr.length)
+           shipY = Math.floor(Math.random()* arr.length)  
+          } while (arr[shipX][shipY] === 1);
+            arr[shipX][shipY] = 1
+           } 
+           return arr
+        }
+        let resultShips = getShips(resultArr,5)
+        console.log(resultShips);
+// граемо
+        function game(arr, ship) {
+             let quantityShots = parseInt(prompt(`введшть к-сь пострілів`))
+   do {
+    let shotX = parseInt(prompt(`введіть куди будете стріляти по рядку від 1 до 6`))
+   let shotY =  parseInt(prompt(`введіть куди будете стріляти по стовпцю від 1 до 6`))
+    if(arr[shotX][shotY] === 1){
+        ship --
+        alert('ви пропали')
+        arr[shotX][shotY] = 0  
+    }
+    else
+    alert('ви промазали')
+    quantityShots -- 
+   } while (ship >0 && quantityShots > 0);
+   
+            }
+            const resultGame = game(resultArr,5)
+            console.log(resultGame);
+    </script>
+</body>
+</html>
