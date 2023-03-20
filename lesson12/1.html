@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>1</title>
+</head>
+<body>
+    <h1>  Дано масив 30 випадкових цілих чисел. Підрахувати скільки
+        було обмінів під час сортування бульбашкою</h1>
+   <script>
+    //Дано масив 30 випадкових цілих чисел. Підрахувати скільки
+    //було обмінів під час сортування бульбашкою
+    function getArr(num) {
+     let arr = []  
+     for (let i = 0; i < num; i++) {
+       let random = Math.floor(Math.random()* 100)+1
+        arr.push(random)
+     } 
+     return arr
+    }
+    let arr = getArr(30)
+    console.log(arr);
+
+    let change 
+    let count = 0
+  do {
+change = false
+for (let i = 1; i < arr.length; i++) {
+  if(arr[i-1] > arr[i]){
+  let temp = arr[i-1]
+  arr[i-1] =arr[i]
+  arr[i]=temp
+  change = true
+  count ++
+  }
+}  
+  } while (change);
+  console.log(arr);
+  document.write(`${arr},numbers of changes= ${count}`)
+   </script> 
+</body>
+</html>

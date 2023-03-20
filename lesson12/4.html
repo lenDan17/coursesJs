@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>4</title>
+</head>
+<body>
+    <h1>Задача 4. Для розглянутих методів сортування спробувати вивести етапи 
+        сортування шляхом виведення відповідних таблиць за зразком.
+        Тобто кожного разу після обміну елементів вивести поточний стан масиву на екран.
+        </h1>
+        <script>
+//             Задача 4. Для розглянутих методів сортування спробувати вивести етапи 
+//              шляхом виведення відповідних таблиць за зразком.
+// Тобто кожного разу після обміну елементів вивести поточний стан масиву на екран.
+
+
+function getArr(num) {
+     let arr = []  
+     for (let i = 0; i < num; i++) {
+       let random = Math.floor(Math.random()* 10)+1
+        arr.push(random)
+     } 
+     return arr
+    }
+    let bubleArr = getArr(5)
+    console.log(bubleArr);
+//сортування бульбашкою
+document.write(` стан масиву${bubleArr}<br>`)
+let change 
+do {
+    change = false
+    for (let i = 1; i < bubleArr.length; i++) {
+       if(bubleArr[i - 1]> bubleArr[i]){
+     let temp = bubleArr[i-1]  
+     bubleArr[i-1] =bubleArr[i]
+     bubleArr[i] = temp
+     change = true
+     document.write(`поточний стан масиву сортування бульбашкою=${bubleArr}<br>`)
+    }}
+    
+} while (change);
+
+document.write(`<br><br><br>`)
+
+//сортування змішуванням
+let mixArr = getArr(5)
+document.write(` стан масиву сортування змішуванням = ${mixArr}<br>`)
+let left = 0
+let right = mixArr.length -1
+while (left < right) {
+  for (let i = left; i < right; i++) {
+   if (mixArr[i]> mixArr[i + 1]) {
+    [mixArr[i],mixArr[i+1]]=[mixArr[i+1],mixArr[i]]
+   } 
+  } 
+  right -- 
+  for (let i = right; i < left; i--) {
+    if(mixArr[i]< mixArr[i + 1]){
+        [mixArr[i],mixArr[i+1]]=[mixArr[i+1],mixArr[i]]   
+    } 
+  }
+  left++ 
+  document.write(`поточний стан масиву сортування змішуванням = ${mixArr}<br>`)
+}
+document.write(`<br><br><br>`)
+//сортування включеннями.
+let swichArr = getArr(5)
+document.write(` стан масиву сортування включеннями = ${swichArr}<br>`)
+let num
+let prevNum
+for (let i = 1; i < swichArr.length; i++) {
+    num = swichArr[i]
+    prevNum = i-1
+    while (prevNum >=0 && swichArr[prevNum] > num) {
+      swichArr[prevNum +1] = swichArr[prevNum] 
+      prevNum = prevNum-1
+    }
+    swichArr[prevNum +1] = num
+    document.write(`поточний стан масиву сортування включеннями = ${swichArr}<br>`) 
+}
+        </script>
+</body>
+</html>
