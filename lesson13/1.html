@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>1</title>
+</head>
+<body>
+   <h1> Нехай x0 = 1,xi = x-1 +2i,де i=1,2....
+    Визначити x10. Розв’язати з використанням рекурсивних і нерекурсивних алгоритмів</h1> 
+    <script>
+        // Нехай x0 = 1,xi = x-1 +2i,де i=1,2....
+//Визначити x10. Розв’язати з використанням рекурсивних і нерекурсивних алгоритмів
+
+// рекурсивнa
+function getX(i) {
+    if(i === 0) return 1
+    else return getX(i - 1) + (2*i) 
+}
+let res =  getX(10)
+console.log(res);
+document.write(` рекурсивнa = ${res}`)
+
+
+//  нерекурсивни алгоритм
+function getNotRecurs(i) {
+ if(i === 0) return 1
+ let x = 1
+  for (let k = 1; k <=i; k++) {
+x = x + (2 * k)
+  } 
+  return x 
+}
+let res2 = getNotRecurs(10)
+console.log(res2);
+document.write(` нерекурсивнa = ${res}`)
+    </script>
+</body>
+</html>

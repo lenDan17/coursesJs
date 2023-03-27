@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>2</title>
+</head>
+<body>
+  <h1>Нехай x0 = x1 = 1, xi = x(i-1) + 2x(i-2), де i = 2,3,....
+     Визначити xn. Розв’язати 
+    з використанням рекурсивних і нерекурсивних алгоритмів</h1>  
+    <script>
+        //Нехай x0 = x1 = 1, xi = x(i-1) + 2x(i-2),
+        // де i = 2,3,.... 
+       // Визначити xn. 
+        //Розв’язати з використанням рекурсивних 
+       // і нерекурсивних алгоритмів
+       
+       
+        //використання рекурсивних
+        function getNumber(n) {
+            if(n===0 || n ===1) return 1
+            else
+            return getNumber(n - 1)+ 2* getNumber(n-2)
+        }
+        let getRecurs = getNumber(4)
+        console.log(getRecurs);
+        // використання нерекурсивних
+        function getNotRecurs(n) {
+          if(n===0 || n ===1) return  1
+          let x =  x1 = 1
+          xn = 1
+          for (let i = 2; i <= n; i++) {
+           xn =  x + x1 *2
+           x1 = x 
+           x = xn
+          }
+          return xn
+        }
+        let notRecurs = getNotRecurs(4)
+        console.log(notRecurs);
+    </script>
+</body>
+</html>

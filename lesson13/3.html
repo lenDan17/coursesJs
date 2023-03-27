@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>3</title>
+</head>
+<body>
+   <h1>Задача 3. З використанням замикань розробити ітератор, тобто функцію, що буде поступово за
+    окремими викликами видавати по одне значення від заданого мінімального до заданого
+    максимального. Якщо значення досягне максимального, то наступним буде мінімальне значення. З
+    використанням цієї функції реалізувати перебір номерів місяців.</h1> 
+    <script>
+        //Задача 3. З використанням замикань розробити ітератор, тобто функцію, що буде поступово за
+// окремими викликами видавати по одне значення від заданого мінімального до заданого
+// максимального. Якщо значення досягне максимального, то наступним буде мінімальне значення. З
+// використанням цієї функції реалізувати перебір номерів місяців.
+function getNumberMonth(minValue,maxValue) {
+   let currentNum =0
+   function counter() {
+    currentNum += minValue
+    if(currentNum > maxValue)
+    currentNum = 1
+    return currentNum
+   }
+  return counter
+}
+let res = getNumberMonth(1,12)
+document.write(`${res()}<br>`)
+document.write(`${res()}<br>`)
+document.write(`${res()}<br>`)
+document.write(`${res()}<br>`)
+document.write(`${res()}<br>`)
+document.write(`${res()}<br>`)
+document.write(`${res()}<br>`)
+document.write(`${res()}<br>`)
+document.write(`${res()}<br>`)
+document.write(`${res()}<br>`)
+document.write(`${res()}<br>`)
+document.write(`${res()}<br>`)
+document.write(`${res()}<br>`)
+document.write(`${res()}<br>`)
+document.write(`${res()}<br>`)
+document.write(`${res()}<br>`)
+document.write(`${res()}<br>`)
+document.write(`${res()}<br>`)
+document.write(`${res()}<br>`)
+    </script>
+</html>
