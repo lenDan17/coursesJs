@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>6</title>
+</head>
+<body>
+    <h1>
+        Задача 5. Розробити клас «Керівник танців»
+
+Поля Масив імен хлопців
+Масив імен дівчат
+
+Методи Метод випадкового вибору імені хлопця
+Метод випадкового вибору імені дівчини
+Метод виведення пари для танців
+Метод run , який ініціює через кожні 5 секунд виведення нової пари для танців
+<script>
+  //  Задача 5. Розробити клас «Керівник танців»
+
+//Поля Масив імен хлопців
+//Масив імен дівчат
+
+//Методи Метод випадкового вибору імені хлопця
+//Метод випадкового вибору імені дівчини
+//Метод виведення пари для танців
+//Метод run , який ініціює через кожні 5 секунд виведення нової пари для танців
+class Danse{
+    constructor(nameBoy,nameGirl){
+        this.nameBoy = nameBoy
+        this.nameGirl =nameGirl
+    }
+//Методи Метод випадкового вибору імені хлопця
+getNameBoy (){
+ let randBoy=  Math.floor(Math.random()* this.nameBoy.length)
+return this.nameBoy[randBoy]
+}
+//Метод випадкового вибору імені дівчини
+getNameGirl (){
+let randGirl= Math.floor(Math.random()* this.nameGirl.length)
+return this.nameGirl[randGirl]
+}
+//Метод виведення пари для танців
+getPair(){
+    let boy = this.getNameBoy(0) 
+    let girl= this.getNameGirl(0)
+    return alert(`виведення пари для танців ${boy} + ${girl}`)
+}
+//Метод run , який ініціює через кожні 5 секунд виведення нової пари для танців
+getRun (){
+    setInterval(() => {
+        this.getPair()
+    },5000);
+}
+
+}
+let result = new Danse(nameBoy=['mark','max','robert','luk','miki'],nameGirl = ['luisa','maria','linda','sofia'])
+result.getRun()
+
+
+</script>
+    </h1>
+</body>
+</html>

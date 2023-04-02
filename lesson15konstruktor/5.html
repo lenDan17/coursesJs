@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>4</title>
+</head>
+<body>
+   <h1>
+    Задача 4. Розробити клас Baner
+Поля Масив об’єктів ( графічних зображень та посилань на сайти)
+методи Метод випадкового вибору об’єкта (графічного зображення та посилання)
+
+Метод виведення випадкового банера
+
+   </h1> 
+
+   <script>
+//Задача 4. Розробити клас Baner
+//Поля Масив об’єктів ( графічних зображень та посилань на сайти)
+//методи Метод випадкового вибору об’єкта (графічного зображення та посилання)
+//Метод виведення випадкового банера
+
+class Baner{
+constructor(imageArr){
+
+    this.imageArr = imageArr
+   
+}
+randomNum(min){
+return min+  Math.floor(Math.random()* (this.imageArr.length-min+1))
+
+}
+getRandomBaner(){
+    let randomNumer = this.randomNum(0)
+    let resImage = this.imageArr[randomNumer].image
+    let resLink = this.imageArr[randomNumer].link
+    return{resImage,resLink}
+}
+getResult(){
+    let {resImage,resLink} = this.getRandomBaner()
+document.write(`<a style = " display: inline-block; border-radius: 5px;  margin-bottom: 25px;color: white;background-color: rgb(119, 87, 46);padding: 15px 30px;font-size: 20px; " href="${resLink}"> link</a>,<br><img style ="width: 500px;nheight: 500px;" src="${resImage}" alt="">`)
+}
+}
+let baner = new Baner(imageArr =[
+   
+   
+   {
+     image :'./img/make.jpg',
+     link : 'https://makeup.com.ua/'  
+   },
+   {
+       image : './img/auto.png',
+       link :' https://www.otomoto.pl/'
+   },
+   {
+       image: './img/flowers.jpg',
+       link : 'https://rozetka.com.ua/ua/tsveti/c4629866/'
+   },
+   {
+       image : './img/auto.png',
+       link :' https://www.otomoto.pl/'
+   },
+   {
+       image : './img/auto.png',
+       link :' https://www.otomoto.pl/'
+   },
+])
+
+baner.getResult()
+   </script>
+</body>
+</html>

@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>3</title>
+</head>
+<body>
+    <h1>Задача 2. Створити об’єкт «Авто».</h1>
+    <script>
+        //Задача 2. Створити об’єкт «Авто».
+        function Auto(brand,tankSize,petrolLiters,numberPlace,numberPassengers){
+            this.brand = brand
+this.tankSize = tankSize
+this.petrolLiters = petrolLiters
+this.numberPlace = numberPlace
+this.numberPassengers = numberPassengers
+        }
+        //Заправка на вказану кількість літрів
+        Auto.prototype.getLiters = function (litters){
+if (this.petrolLiters + litters <= this.tankSize) 
+    this.petrolLiters += litters
+else
+alert('it won"t fit in the tank')
+        }
+        //Виведення кількості пасажирів
+        Auto.prototype.toString =function(){
+            return `Auto ${this.numberPassengers}`
+        }
+        //Додавання пасажирів
+        Auto.prototype.getMultiPassengers = function(newPasagers){
+if(this.numberPassengers + newPasagers <= this.numberPlace)
+this.numberPassengers += newPasagers
+else 
+alert`wait for the next bus`
+        }
+        //Висадка пасажирів
+        Auto.prototype.getMinPassengers=function(minusPassengers){
+            this.numberPassengers -= minusPassengers 
+        }
+        let autoRes =new Auto('Audi',50,15,30,17)
+        console.log(autoRes);
+        document.write(` кількість літрів =${autoRes.petrolLiters} <br>`)
+        autoRes.getLiters(20)
+        document.write(`Заправка на вказану кількість літрів =${autoRes.petrolLiters}<br>`)
+        autoRes.toString()
+        document.write(` кількість пасажирів =${autoRes.numberPassengers}<br>`)
+        autoRes.getMultiPassengers(8)
+        document.write(`нова кількість пасажирів  =${autoRes.numberPassengers}<br>`)
+        autoRes.getMinPassengers(5)
+        document.write(`Висадка пасажирів  =${autoRes.numberPassengers}<br>`)
+    </script>
+</body>
+</html>

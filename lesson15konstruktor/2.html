@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>1</title>
+</head>
+<body>
+    <h1>Задача 1. Створити об’єкт «Тир». У масиві зберігаються 1, якщо у цьому квадраті є заєць і 0 в іншому
+        випадку.</h1>
+        <script>
+            //Задача 1. Створити об’єкт «Тир». 
+            //У масиві зберігаються 1, якщо у цьому квадраті є заєць і 0 в іншому
+//випадку.
+function Game(min, max, arrNumber){
+this.min = min,
+this.max = max,
+this. arr =this.getArrNumber(arrNumber)
+
+}
+Game.prototype.getRandom = function(min, max){
+    return min + Math.floor(Math.random() * (max - min +1))
+}
+Game.prototype.getArrNumber= function(arrNumber){
+    let arrList =[]
+    for (let i = 0; i < arrNumber; i++) {
+       const randomNum = this.getRandom(this.min, this.max) 
+      arrList.push(randomNum)  
+    }
+    return arrList
+}
+
+Game.prototype.toString = function(){
+    return `Game ${this.arr}`
+}
+
+let s = new Game(0,1,4)
+
+console.log(s);
+document.write(s.arr.toString())
+        </script>
+</body>
+</html>

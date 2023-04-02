@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>o</title>
+</head>
+<body>
+    <h1>Задача 0. Дано два об’єкта. Обидва містять масив цілих чисел. При цьому у одному з них є функція
+        знаходження суми, а у іншому – функція для знаходження добутку тих, які знаходяться між заданими
+        мінімальним і максимальних значенням.
+        Використати обидва методи стосовно обидвох об’єктів (використати call, apply)</h1>
+        <script>
+        // Задача 0. Дано два об’єкта. Обидва містять масив цілих чисел. При цьому у одному з них є функція
+        //     знаходження суми, а у іншому – функція для знаходження добутку тих, які знаходяться між заданими
+        //     мінімальним і максимальних значенням.
+        //     Використати обидва методи стосовно обидвох об’єктів (використати call, apply)
+           let number1 = {
+numbers: [5,6,1,4,3,2],
+
+getSum : function () {
+     return this.numbers.reduce((prevnum, element)=> element+ prevnum) 
+}
+
+ }
+ let number2 ={
+    numbers: [1,6,1,4,3,2], 
+    getMultiplay : function (min, max) {
+       return this.numbers.reduce((prevnum, num) => {
+        if(num >min && num < max )
+       return prevnum * num
+       else return prevnum
+       } ,1) 
+    },
+ }
+let resultNumber2 = number1.getSum.call(number2)
+console.log(resultNumber2);
+let resultNumberOne = number2.getMultiplay.apply(number1,[2,6])
+console.log(resultNumberOne);
+            </script>
+</body>
+</html>

@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>4</title>
+</head>
+<body>
+    <h1>
+        Задача 3. Розробити 
+        клас MultChecker для перевірки таблиці множення
+    </h1>
+    <script>//Задача 3. Розробити клас MultChecker для перевірки таблиці множення
+    class MultChecker{
+        constructor(number){
+            this.number= number
+            this.trueNum = 0
+            this.falseNum = 0
+        }
+   
+    //Генерування прикладу (метод випадковим чином визначає друге число, перше
+//число фіксоване)
+    getRandom(min,max){
+let randomNUm = min+ Math.floor(Math.random()* (max-min + 1))
+let resultNum = this.number * randomNUm
+let userNum = parseInt(prompt(`${this.number} *${randomNUm}`))
+return{resultNum, userNum}
+    } 
+    //Перевірка правильності вказаної відповіді
+//render - виведення інформації про тестування на екран
+
+checkNum(){
+    do {
+        let {resultNum,userNum} = this.getRandom(1,10)
+      if(resultNum === userNum)
+      this.trueNum++ 
+      else
+      this.falseNum++ 
+    } while (confirm(`для закінчення натисніть cancel`));
+}
+}
+let result = new MultChecker(5)
+result.checkNum()
+document.write(`число = ${result.number}<br>`)
+document.write(`к-сть правельних відповідей = ${result.trueNum}<br>`)
+document.write(`к-сть не правельних відповідей = ${result.falseNum}<br>`)
+
+
+    </script>
+</body>
+</html>
