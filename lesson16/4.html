@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>4</title>
+</head>
+<body>
+    <h1>Задача 4. Створити клас TBankomat, який моделює роботу банкомата. Клас повинен
+        містити поля для зберігання кількості купюр кожного із номіналів від 5 до 200 гривень.
+        Реалізувати методи знаходження максимальної та мінімальної сум, які може видати
+        банкомат, та метод зняття деякої суми.</h1>
+        <script>
+            class TBankomat{
+                constructor(banknotes){
+this.banknotes = banknotes
+
+                }
+//методи знаходження максимальної  сумu
+getMaxSum(){
+    let max = 0
+    for (const el of this.banknotes) {
+      max+= el.banknota * el.quantity
+    }
+   return max
+  
+}
+//методи знаходження  мінімальної сум
+getMinMax(){
+ 
+    for (const elMin of this.banknotes) {
+       if(elMin.quantity > 0) 
+      return  elMin.banknota
+    }}
+    // метод зняття деякої суми
+    getMinusSum ( money){
+        if ( money > this.getMaxSum() || money< this.getMinMax())
+        throw new Error('don"t have many money')
+       return this.getMaxSum() - money
+    }
+}
+    let bankomat = new TBankomat(
+                [
+                    {
+banknota: 5,
+quantity : 10
+                    },
+                    {
+banknota: 10,
+quantity : 20
+                    },
+                    {
+banknota: 20,
+quantity : 5
+                    },
+                    {
+banknota: 50,
+quantity : 50
+                    },
+                    {
+banknota: 100,
+quantity : 100
+                    },
+                    {
+banknota: 200,
+quantity : 50
+                    },
+                    {
+banknota: 500,
+quantity : 5
+                    }
+
+                    
+
+                ]
+            )
+            let maxBanknote = bankomat.getMaxSum()
+            console.log(maxBanknote);
+            let minBanknote = bankomat.getMinMax()
+            console.log(minBanknote);
+            let p = bankomat.getMinusSum(200)
+            console.log(p);
+        </script>
+</body>
+</html>

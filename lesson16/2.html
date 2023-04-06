@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>2</title>
+</head>
+<body>
+    <h1>Задача 2. Створити клас TMoney для роботи з грошовими сумами. Сума повинна зберігатися
+        у вигляді доларового еквіваленту. Реалізувати методи додавання/вилучення грошової маси,
+        вказуючи необхідну суму у гривнях, та визначення курсу долара, при якому сума у гривнях
+        збільшиться на 100. Курс долара зберігати в окремому полі.
+        </h1>
+        <script>
+//             Задача 2. Створити клас TMoney для роботи з грошовими сумами. 
+//Сума повинна зберігатися
+// у вигляді доларового еквіваленту. Реалізувати методи додавання/вилучення 
+//грошової маси,
+// вказуючи необхідну суму у гривнях, та визначення курсу долара,
+// при якому сума у гривнях
+// збільшиться на 100. Курс долара зберігати в окремому полі.
+class TMoney{
+    #rate
+    constructor(dollarRate, dollars){
+this.#rate = dollarRate
+this.dollars = dollars
+
+    }
+    get Rate(){
+        return this.#rate
+    }
+    set Rate(newRate){
+if(newRate <30 || newRate > 45 )
+    throw new Error ('i am sorry')
+    this.#rate = newRate
+    }
+//Реалізувати методи додавання грошової маси
+  getSumMoney (money)  {
+ return this.dollars = this.dollars +  money / this.#rate
+
+  }
+  //вилучення 
+//грошової маси
+getMinusMoney (money){
+let resMoney = money / this.#rate
+     if(resMoney < this.dollars)
+     this.dollars= this.dollars -resMoney
+     else
+     alert('error')
+    return this.dollars 
+}
+//// збільшиться на 100.
+getPlus100(){
+return this.#rate = this.#rate +(100 / this.dollars)
+}
+toString(){
+    return this.dollars
+}
+}
+let result = new TMoney(40,1000)
+document.write(`грошовa сума =${result.dollars}<br><br>`)
+result.getSumMoney(200)
+document.write(`грошовa сума додавання =${result.dollars}$<br>`)
+
+result.getMinusMoney(400)
+document.write(`грошовa сума вилучення =${result.dollars}$<br>`)
+
+result.getPlus100()
+document.write(`грошовa сума  збільшиться на 100 =${result.Rate}$<br>`)
+        </script>
+</body>
+</html>

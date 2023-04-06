@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>3</title>
+</head>
+<body>
+    <h1>Задача 3. Об’єкт “Фірма” (використати члени-класи)
+        поля ▪ назва фірми;
+        
+        ▪ дата заснування (рік, місяць);
+        ▪ послуги (назва послуги, вартість, термін виконання);
+        ▪ адреси філіалів (країна, місто, вулиця, номер будинку);
+        
+        методи ▪ визначення кількості років існування фірми;
+        ▪ виведення всіх філіалів фірми у вказаному місті;
+        ▪ виведення на екран послуг, що можуть бути виконані за вказану
+        суму грошей та вказаний термін часу;</h1>
+        <script>
+            class Company{
+                constructor(nameCompany, dateStart, servises,adressCity){
+                    this.nameCompany =nameCompany
+                    this.dateStart = dateStart
+                    this.servises = servises
+                    this.adressCity = adressCity
+                }
+               //методи ▪ визначення кількості років існування фірми;
+               getYear(year,month) {
+let years = year - this.dateStart.year
+let months =  this.dateStart.month -month
+if(months < 0){
+years =years - 1
+months =months+12}
+return document.write(`років${years},місяць ${months} <br>`)
+               }
+
+//▪ виведення всіх філіалів фірми у вказаному місті;
+getCompanyStreet(nameCity){
+let findCity = this.adressCity.filter(el=> el.city === nameCity)
+return findCity
+}
+
+//виведення на екран послуг, що можуть бути виконані за вказану
+    //    суму грошей та вказаний термін часу;
+getSerisesPrice (servise,money){
+let findServises = this.servises.filter(el=>el.cost <= money && el.terms<=servise )
+return findServises
+
+}
+
+            }
+        let newCompany = new Company(
+                'Afrodita',
+                {
+year: 2000,
+month:1
+                },
+                [{
+                    nameServise: 'men"s haircut ',
+                    cost: 100,
+                    terms: 30
+                },
+                {
+                    nameServise: 'women"s haircut ',
+                    cost: 150,
+                    terms: 1
+                }
+            ],
+            [{
+                coutry:'Ukraine',
+                city: 'kremenchuk',
+                street: 'lesi Ukrainki',
+                numberHouse: 5
+            },
+            {
+                coutry:'Ukraine',
+                city: 'Poltava',
+                street: 'Polanki',
+                numberHouse: 87
+            },
+            {
+                coutry:'poland',
+                city: 'krakow',
+                street: 'shopena',
+                numberHouse: 87
+            }
+        ],
+            )
+            newCompany.getYear(2023,5)
+        
+       let adress = newCompany.getCompanyStreet('Poltava')
+       console.log(adress );
+       let servis = newCompany.getSerisesPrice(1,250)
+       console.log(servis);
+   
+     
+        </script>
+</body>
+</html>
