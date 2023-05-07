@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>2</title>
+</head>
+<body>
+  <h1>Дано 5 елементів input. При введенні значення у якийсь із них необхідно
+    автоматично заповнювати інші усі попередні у спадному порядку(кожен попередній
+    має значення на 1 менше за наступний), усі наступні на 1 більше (кожен наступне
+    на 1 більше за попереднього)</h1> 
+    <div class="container1">
+<input value="" type="number">
+<input value="" type="number">
+<input value="" type="number">
+<input value="" type="number">
+<input value="" type="number">
+<input value="" type="number">
+<input value="" type="number">
+    </div> 
+    <script>
+        
+
+
+function chaingInput(event) {
+ let input = event.target   
+ let num = parseInt(input.value)
+ while (input.nextElementSibling) {
+    input= input.nextElementSibling
+    input.value =  ++num
+ }
+ while (input.previousElementSibling) {
+    input = input.previousElementSibling
+    input.value = --num
+ }
+}
+   const container = document.querySelector('.container1').oninput = chaingInput
+    </script>
+</body>
+</html>
+ 

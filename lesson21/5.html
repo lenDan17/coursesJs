@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>5</title>
+</head>
+<body>
+    <style>
+        form{
+            display: flex;
+            flex-direction: column;
+            row-gap: 15px;
+        
+        }
+        label{
+            font-size: 1.2rem;
+        }
+    </style>
+   <h1>На формі вводять 7 числових значень 
+    (вік, зріст, вага, заробітна плата,
+    стаж, номер відділу, порядковий номер). Додати подію обробки події click на форму
+    і якщо клік на input, то автоматично замінювати значення його на 0.</h1> 
+    <form action="#">
+        <label for="">вік
+            <input class="input" type="number">
+        </label>
+        <label for="">зріст
+            <input class="input" type="number">
+        </label>
+        <label for="">вага
+            <input class="input" type="number">
+        </label>
+        <label for="">зп
+            <input class="input" type="number">
+        </label>
+        <label for="">стаж
+            <input class="input" type="number">
+        </label>
+        <label for="">номер відділу
+            <input class="input" type="number">
+        </label>
+        <label for="">порядковий номер
+            <input class="input" type="number">
+        </label>
+    </form>
+<script>
+    let input = document.querySelectorAll('.input')
+    console.log(input);
+    for (const el of input) {
+        el.addEventListener('change',(event)=>{
+            event.target.value =0
+           
+        })
+    }
+</script>
+</body>
+</html>

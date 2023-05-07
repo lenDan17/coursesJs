@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>4</title>
+</head>
+<body>
+    <style>
+        .container{
+            display: flex;
+            gap: 30px;
+        }
+        table{
+            border: 2px solid black;
+            font-size: 20px;
+          
+        }
+        td{
+            border: 2px solid black;
+            padding: 10px;
+        }
+    </style>
+    <h1>Задача 4. Дано 3 таблиці розмірності 3*3 з випадковими числами. Якщо відбувається
+        клік на якійсь із клітинок, то до відповідної таблиці додається червона рамка
+        (спробуйте додати можливість відображення кількості кліків біля назви таблиці з
+        використанням відповідно доданого для цього атрибута).</h1>
+<div class="container">
+
+</div>
+        <script>
+            class Table{
+                constructor(numberColumn, numberRow,numberTable){
+                  this.numberColumn=numberColumn
+                  this.numberRow=numberRow 
+                  this.numberTable=numberTable
+                }
+
+                random(min,max){
+                    return min + Math.floor(Math.random()* (max-min)+1)
+                }
+
+
+           getTable() {
+            
+    
+           const table = document.createElement('table')
+           table.className = 'container__table'
+            for (let k = 0; k < this.numberColumn; k++) {
+              const tr = document.createElement('tr')
+             for (let j = 0; j < this.numberRow; j++) {
+               const td =document.createElement('td')
+               td.className ='td'
+               td.innerText = `${this.random(1,10)}`
+               tr.append(td)
+             } 
+             table.append(tr) 
+             console.log(table); 
+            }
+  
+          return table
+          
+           } 
+           
+         render(container ){
+            const total = document.querySelector(container)
+            for (let i = 0; i < this.numberTable; i++) {
+              total.append(this.getTable())
+                
+            }
+         } 
+
+            }
+            let s = new Table(3,3,3)
+         s.render('.container')
+         let container = document.querySelectorAll('.container__table')
+         console.log(container);
+      ;
+
+for (const el of container) {
+    el.addEventListener('click',()=>{
+
+el.style.borderColor = 'red'
+})
+}
+             
+        
+         
+       
+         
+        </script>
+</body>
+</html>

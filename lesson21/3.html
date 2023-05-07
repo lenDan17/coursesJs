@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>3</title>
+</head>
+<body>
+   <h1>Задача 3. Дано 5 випадковим чином згенерованих нумерованих списків з рандомними
+    числами (кількість елементів у списку випадкова від 1 до 10, елементи випадкові –
+    від 1 до 100). При натисненні на кнопку нумеровані списки з парною кількістю
+    елементів зафарбувати у зелений колір, інші у червоний.</h1> 
+<div class="container">
+
+
+</div>
+
+    <script>
+        class List{
+            constructor(){
+
+            }
+            getRandom(min,max){
+                return min + Math.floor(Math.random()*(max-min)+1)
+            }
+
+getList(){
+    this.ol = document.createElement('ol')
+    for (let i = 0; i <this.getRandom(1,10); i++) {
+        const li  = document.createElement('li')
+        li.innerText = this.getRandom(1,100)
+        this.ol.append(li)
+        
+    }
+    return this.ol
+    console.log(ol);
+}
+
+
+
+render(container){
+    const total = document.querySelector(container)
+    for (let i = 0; i < 5; i++) {
+       total.append(this.getList())
+        
+    }
+  const button = document.createElement('button')
+  button.className = "container__button"
+    button.innerText = 'click'
+    total.append(button)
+}
+        }
+
+        let b = new List()
+        b.render('.container')
+        console.log(b);
+let button = document.querySelector('.container__button')
+let ol = document.getElementsByTagName('ol')
+console.log(ol);
+  button.addEventListener('click',()=>{
+for (el  of ol) {
+    if(el.children.length %2 === 0)
+    el.style.color = 'green'
+    else
+    el.style.color = 'red'   
+}
+  })
+   </script>
+</body>
+</html>
